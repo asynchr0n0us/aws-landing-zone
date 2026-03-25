@@ -1,0 +1,5 @@
+# S3 bucket logging - not required
+AVD-AWS-0089
+
+# CloudWatch log group KMS encryption - using default encryption
+AVD-AWS-0017

@@ -1,0 +1,7 @@
+# "cp terraform.tfvars.template terraform.tfvars"  for activate
+
+project_name = "landing-zone"
+account_id   = "338179339601"
+aws_region   = "eu-central-1"
+owner        = "platform-infra"
+environment  = "develop"
