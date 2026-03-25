@@ -10,11 +10,11 @@ AWS
 - Security Account      (CloudTrail, GuardDuty, Config, Security Hub)
 - Develop Account
 - Staging Account
-- Prod Account
+- Production Account
     VPC (multi-AZ)
     Public Subnets   (ALB, NAT Gateway)
     Private Subnets  (ECS/EKS workloads)
-    Data Subnets     (RDS, ElastiCache)
+    Data Subnets     (RDS, databases)
 ```
 
 # Features
