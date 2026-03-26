@@ -40,18 +40,25 @@ curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/instal
 
 # trivy
 sudo apt install wget apt-transport-https gnupg -y
+
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+
 echo "deb https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee /etc/apt/sources.list.d/trivy.list
+
 sudo apt update && sudo apt install trivy -y
 
 # checkov
 pip install checkov --break-system-packages
 
 # pre-commit install
-python3 -m
+python3 -m venv
+
 source /path/to/venv/bin/activate
+
 pip install pre-commit
+
 cd /into/the/project/dir
+
 pre-commit install
 
 # Usage
