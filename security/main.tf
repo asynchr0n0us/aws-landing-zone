@@ -4,15 +4,18 @@ terraform {
     aws = { source = "hashicorp/aws", version = "~> 5.0" }
   }
   backend "s3" {
-    bucket         = "aws-landing-tfstate-bucket"
+    bucket         = "landing-terraform-state-723298837109"
     key            = "security/terraform.tfstate"
-    region         = "eu-central-1"
+    region         = "eu-west-1"
     encrypt        = true
-    dynamodb_table = "terraform-locks"
+    use_lockfile   = true
   }
 }
 
-provider "aws" { region = var.aws_region }
+provider "aws" { 
+  region           = var.aws_region 
+  profile          = var.aws_profile
+}
 
 # KMS
 resource "aws_kms_key" "security" {

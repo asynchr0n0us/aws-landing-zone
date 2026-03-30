@@ -1,23 +1,36 @@
 variable "aws_region" {
   description = "AWS region for the state bucket"
   type        = string
-  default     = "eu-central-1"
+  default     = "eu-west-1"
+}
+
+variable "aws_profile" {
+  description = "local_test profile"
+  type        = string
+  default     = "local_test"
 }
 
 variable "project_name" {
   description = "Project name used as prefix for all resources"
   type        = string
+  default     = "landing-zone"
+}
+
+variable "aws_bucket" {
+  description = "tfstate file"
+  type        = string
+  default     = "landing-zone"
 }
 
 variable "account_id" {
-  description = "AWS account ID (used in bucket naming)"
+  description = "723298837109"
   type        = string
 }
 
 variable "owner" {
   description = "Owner tag value"
   type        = string
-  default     = "platform-infra"
+  default     = "landing-zone"
 }
 
 #variable "environment" {

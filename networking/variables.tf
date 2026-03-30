@@ -1,29 +1,53 @@
-variable "aws_region" {
-  type    = string
-  default = "eu-central-1"
+variable "aws_region" { 
+  description = "AWS region"
+  type        = string 
+  default     = "eu-west-1" 
+}
+
+variable "aws_profile" {
+  description = "AWS profile"
+  type        = string
+  default     = "local_test"
+}
+
+variable "aws_bucket" {
+  description  = "tfstate file"
+  type         = string
+  default      = "landing-zone"
 }
 
 variable "project_name" {
-  type = string
+  description  = "Project name prefix for all resources"
+  default      = "landing-zone"
+  type = string 
+}
+
+variable "account_id" {
+  description = "AWS account id"
+  type        = string
+  default     = "723298837109"
 }
 
 variable "environment" {
-  type    = string
-  default = "develop"
+  description = "Environment name" 
+  type = string 
+  default = "develop" 
 }
 
-variable "vpc_cidr" {
-  type    = string
-  default = "10.0.0.0/16"
+variable "vpc_cidr"  {
+  description = "VPC subnet" 
+  type = string
+  default = "10.0.0.0/16" 
+ }
+
+variable "azs"  { 
+  description = "Availability zone"
+  type = list(string)
+  default = ["eu-west-1a", "eu-west-1b", "eu-west-1c"] 
 }
 
-variable "azs" {
-  type    = list(string)
-  default = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
-}
-
-variable "single_nat_gateway" {
-  type        = bool
-  default     = true
-  description = "staging / develop true for cut costs"
+variable "single_nat_gateway"  {
+  description = "Sigle NAT GW for staging / develop true for cut costs " 
+  type = bool 
+  default = true 
 }
