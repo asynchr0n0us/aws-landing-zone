@@ -16,10 +16,10 @@ variable "project_name" {
   default     = "landing-zone"
 }
 
-variable "aws_bucket" {
-  description = "tfstate file"
+variable "tf_state_bucket_name" {
+  description = "tfstate file name"
   type        = string
-  default     = "landing-zone"
+  default     = "landing-zone-terraform-state"
 }
 
 variable "account_id" {

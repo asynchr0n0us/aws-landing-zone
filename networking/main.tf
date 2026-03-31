@@ -4,7 +4,7 @@ terraform {
     aws = { source = "hashicorp/aws", version = "~> 5.0" }
   }
   backend "s3" {
-    bucket         = "landing-terraform-state-723298837109"
+    bucket         = "landing-zone-terraform-state-723298837109"
     key            = "networking/terraform.tfstate"
     region         = "eu-west-1"
     encrypt        = true
