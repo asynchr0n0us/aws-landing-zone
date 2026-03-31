@@ -8,6 +8,7 @@ terraform {
   }
 }
 
+
 provider "aws" {
   region  = var.aws_region
   profile = var.aws_profile
@@ -15,8 +16,10 @@ provider "aws" {
 
 
 # S3 Bucket for tfstate
+
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "landing-terraform-state-723298837109"
+  bucket = "${var.tf_state_bucket_name}-${var.account_id}"     #does not accept variables
+  force_destroy = true
 
   lifecycle {
     prevent_destroy = false

@@ -10,10 +10,10 @@ variable "aws_profile" {
   default     = "local_test"
 }
 
-variable "aws_bucket" {
+variable "tf_state_bucket_name" {
   description  = "tfstate file"
   type         = string
-  default      = "landing-zone"
+  default      = "landing-zone-terraform-state"
 }
 
 variable "project_name" {
